@@ -29,9 +29,9 @@ class Candidato(models.Model):
     forma la clase
     """
     nombre = models.CharField(max_length=128)
-    edad = models.IntegerField(default=None)
+    apellido = models.CharField(max_length=128)
     def __unicode__(self):
-       return self.nombre 
+       return self.Candidato 
 
 
 class Votos(models.Model):
@@ -40,6 +40,7 @@ class Votos(models.Model):
     En este comentario escribir por que se decide modelar de esta
     forma la clase
     """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    voto = models.ForeignKey(Distrito)
-        return voto.objects.filter(Votos=self).count()
+
+    voto_candidato = models.ForeignKey(Candidato, null=True, blank=True)
+    def __str__(self):
+        return self.Votos
