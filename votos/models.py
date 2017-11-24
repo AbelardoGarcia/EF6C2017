@@ -16,7 +16,7 @@ class Distrito(models.Model):
     nombre = models.CharField('Nombre del distrito', max_length=128)
     cantidad_votantes = models.IntegerField('Cantidad de votantes', default=0)
     latitude = models.DecimalField('Latitud', max_digits=14, decimal_places=10, default=0)
-    longitude = models.DecimalField('Latitud', max_digits=14, decimal_places=10, default=0)
+    longitude = models.DecimalField('Longitud', max_digits=14, decimal_places=10, default=0)
 
 
     def __str__(self):
@@ -28,7 +28,10 @@ class Candidato(models.Model):
     En este comentario escribir por que se decide modelar de esta
     forma la clase
     """
-    pass
+    nombre = models.CharField(max_length=128)
+    edad = models.IntegerField(default=None)
+    def __unicode__(self):
+       return self.nombre 
 
 
 class Votos(models.Model):
@@ -37,4 +40,6 @@ class Votos(models.Model):
     En este comentario escribir por que se decide modelar de esta
     forma la clase
     """
-    pass
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    voto = models.ForeignKey(Distrito)
+        return voto.objects.filter(Votos=self).count()

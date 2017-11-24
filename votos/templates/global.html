@@ -1,4 +1,13 @@
+<html>
+<meta charset="utf-8">
 <h1>Resultado de elecciones</h1>
+
+
+<b>nombre: </b>{{ distrito.nombre }}</ul>
+<b>cantidad_votantes: </b>{{distrito.cantidad_votantes}}</ul>
+<b>latitude: </b>{{distrito.latitude}} </ul>
+<b>longitude: </b>{{distrito.longitude}} </ul>
+
 
 <!-- Deberias escribir el codigo aqui -->
 
@@ -11,3 +20,4 @@
 <a href="{% url 'distrital' %}">{{distrito}}</a><br>
 
 {% endfor %}
+</html>
